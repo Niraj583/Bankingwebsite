@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link rel="stylesheet" href="home.css">
+  <title>hw</title>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+
+      <div class="logo">
+        <img src="logo.jpg" alt="logo">
+
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Contact Us</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#"> Our Services</a>
+          </li>
+
+        </ul>
+        <form class="d-flex">
+
+        </form>
+      </div>
+    </div>
+  </nav>
+
+
+  <br>
+
+
+<!-- navbar ends here -->
+
+
+  <div class="my-info text-center">
+
+    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Sendm">Send Money</button>
+    <Buttton class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Trans">Transaction History</Buttton>
+
+  </div>
+
+  <!-- Modal For Send Money -->
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="Sendm" tabindex="-1" aria-labelledby="SendmLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="SendmLabel">Send Money</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="">
+            <div class="input-group mb-3">
+              <input type="text" id="enterSName" class="form-control" placeholder=" Sender's Username"
+                aria-label="Username" aria-describedby="basic-addon1">
+              <span class="input-group-text" id="basic-addon1">@gmail.com</span>
+            </div>
+
+            <div class="input-group mb-3">
+              <input type="text" id="enterName" class="form-control" placeholder="Recipient's username"
+                aria-label="Recipient's username" aria-describedby="basic-addon2">
+              <span class="input-group-text" id="basic-addon2">@gmail.com</span>
+            </div>
+
+
+            <div class="input-group mb-3">
+              <span class="input-group-text">₹</span>
+              <input type="text" id="enterAmount" class="form-control" aria-label="Amount">
+              <span class="input-group-text">.00</span>
+            </div>
+
+
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success" onclick="sendMoney()" data-dismiss="modal">Send Money</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal For Transaction History -->
+
+  <div class="modal fade" id="Trans" tabindex="-1" aria-labelledby="TransLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title " id="TransLabel">Transaction History</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ol id="transaction-history-body">
+
+          </ol>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <!-- Table -->
+
+  <div class="container">
+
+    <div class="table-responsive">
+
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr class="table-danger">
+            <th scope="col">Sr.no</th>
+            <th scope="col">Username</th>
+            <th scope="col">UserId</th>
+            <th scope="col">Bank Balance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table-info">
+            <th scope="row">1</th>
+            <td>Niraj Jadhav</td>
+            <td>nirajjadhav@gmail.com</td>
+            <td>
+              <p id="nirajjadhavBankBalance">46000</p>
+            </td>
+          </tr>
+          <tr class="table-success">
+            <th scope="row">2</th>
+            <td>Aman Dubey</td>
+            <td>amandubey@gmail.com</td>
+            <td>
+              <p id="amandubeyBankBalance">40000</p>
+            </td>
+          </tr>
+          <tr class="table-light">
+            <th scope="row">3</th>
+            <td>Umang Morghade</td>
+            <td>umangmorghade@gmail.com</td>
+            <td>
+              <p id="umangmorghadeBankBalance">30000</p>
+            </td>
+          </tr>
+          <tr class="table-info">
+            <th scope="row">4</th>
+            <td>Shobhit Ninawe</td>
+            <td>shobhitninawe@gmail.com</td>
+            <td>
+              <p id="shobhininaweBankBalance">50000</p>
+            </td>
+          </tr>
+          <tr class="table-success">
+            <th scope="row">5</th>
+            <td>Om pandey</td>
+            <td>ompandey@gmail.com</td>
+            <td>
+              <p id="ompandeyBankBalance">23000</p>
+            </td>
+          </tr>
+          <tr class="table-light">
+            <th scope="row">6</th>
+            <td>Shreyas Dodhre</td>
+            <td>shreyasdodhre@gmail.com</td>
+            <td>
+              <p id="shreyasdodhreBankBalance">48990</p>
+            </td>
+          </tr>
+          <tr class="table-info">
+            <th scope="row">7</th>
+            <td>Rohit shah</td>
+            <td>rohitshah@gmail.com</td>
+            <td>
+              <p id="rohitshahBankBalance">34200</p>
+            </td>
+          </tr>
+          <tr class="table-success">
+            <th scope="row">8</th>
+            <td>Ayush Dolas</td>
+            <td>ayushdolas@gmail.com</td>
+            <td>
+              <p id="ayushBankBalance">38000</p>
+            </td>
+          </tr>
+          <tr class="table-light">
+            <th scope="row">9</th>
+            <td>alex Ojha</td>
+            <td>alexojha@gmail.com</td>
+            <td>
+              <p id="alexojhaBankBalance">42000</p>
+            </td>
+          </tr>
+          <tr class="table-info">
+            <th scope="row">10</th>
+            <td>Naman Kumar</td>
+            <td>naman@gmail.com</td>
+            <td>
+              <p id="namankumarBankBalance">44000</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <script src="script.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+    integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
+    integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
